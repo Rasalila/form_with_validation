@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Форма регистрации с валидацией всех полей</title>
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="registration">
+        <form class="registration__form" name="registation">
+          <h1 class="registration__title">Регистрация</h1>
+
+          <label class="registation__label">
+            <p class="registration__input-title">
+              Ваше имя:
+              <span class="registration__required-mark">*</span>
+            </p>
+
+            <input
+              class="registration__input"
+              type="text"
+              name="name"
+              minlength="2"
+              maxlength="20"
+              placeholder="Имя"
+              required
+            />
+          </label> 
+
+      <!-- ............. -->
+      <ul class="registration__list" id="constraints-name">
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="./assets/img/checkmark.png"
+                alt="correct"
+              />Длина имени должна быть от 2 до 20 символов
+            </li>
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="../assets/img/checkmark.png"
+                alt="correct"
+              />Должно содержать только буквы и пробелы
+            </li>
+          </ul>
+      <!-- ...................... -->
+
+      <label class="registation__label">
+            <p class="registration__input-title">
+              Ваш email:
+              <span class="registration__required-mark">*</span>
+            </p>
+
+            <input
+              class="registration__input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              maxlength="50"
+            />
+      </label>
+
+      <!-- ///////////////////// -->
+      <ul class="registration__list" id="constraints-email">
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="./assets/img/checkmark.png"
+                alt="correct"
+              />
+              Должно содержать символ '@' и доменное имя
+            </li>
+          </ul>
+      <!-- /////////////////////// -->
+      
+          <label class="registation__label">
+            <p class="registration__input-title">
+              Ваш возраст:
+              <span class="registration__required-mark">*</span>
+            </p>
+
+            <input
+              class="registration__input"
+              type="number"
+              name="age"
+              placeholder="Возраст"
+              required
+              maxlength="3"
+            />
+          </label> 
+
+      <!-- .................. -->
+      <ul class="registration__list" id="constraints-age">
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="./assets/img/checkmark.png"
+                alt="correct"
+              />
+              Должно быть число не меньше 14 и не больше 100
+            </li>
+          </ul>
+
+          <fieldset class="registation__fieldset" name="fieldset">
+            <legend>
+              Укажите ваш пол
+              <span class="registration__required-mark">*</span>
+            </legend>
+
+            <label class="registation__label">
+              <p class="registration__radio-wrapper">
+                <input
+                  class="registration__radio"
+                  type="radio"
+                  name="sex"
+                  value="woman"
+                />
+                <span class="registration__radio-title"></span>
+              </p>
+              Женщина
+            </label>
+            <label class="registation__label">
+              <p class="registration__radio-wrapper">
+                <input
+                  class="registration__radio"
+                  type="radio"
+                  name="sex"
+                  value="man"
+                />
+                <span class="registration__radio-title"></span>
+              </p>
+              Мужчина
+            </label>
+          </fieldset>
+
+          <label class="registation__label">
+            <p class="registration__input-title">
+              Ваша профессия:
+              <span class="registration__required-mark">*</span>
+            </p>
+
+            <span class="registration__select-wrapper">
+              <select
+                class="registration__select"
+                name="profession"
+                id="selectProfession"
+                required
+              >
+                <option value="" disabled selected hidden>
+                  Выберите профессию ▼
+                </option>
+                <option value="doctor">Врач</option>
+                <option value="programmer">Программист</option>
+                <option value="teacher">Учитель</option>
+                <option value="designer">Дизайнер</option>
+                <option value="engineer">Инженер</option>
+                <option value="saler">Продавец</option>
+                <option value="other">Другое</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="registation__label">
+            <span class="registration__input-title"></span>
+              Введите пароль:
+              <span class="registration__required-mark">*</span>
+            </p>
+
+            <input
+              class="registration__input"
+              type="password"
+              name="password"
+              placeholder="Пароль"
+              required
+              minlength="8"
+              maxlength="50"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*"/>
+            </label> 
+
+      <!-- ///////////////////////// -->
+     <ul class="registration__list" id="constraints-password">
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="./assets/img/checkmark.png"
+                alt="correct"
+              />
+              Должно быть не менее 8 символов длиной
+            </li>
+
+            <li class="registation__item">
+              <img
+                class="registation__item-icon registation__item-icon_hidden"
+                src="./assets/img/checkmark.png"
+                alt="correct"
+              />
+              Должно содержать как минимум одну заглавную букву, одну строчную
+              букву и одну цифру
+            </li>
+          </ul> 
+      <!-- ///////////////////////// -->
+
+      <label class="registation__label">
+            <span class="registration__checkbox-wrapper">
+              <input
+                class="registration__checkbox"
+                type="checkbox"
+                name="agreement"
+                required
+              />
+              <p class="registration__checkbox-title"></p>
+            </span>
+            Я согласен с обработкой персональных данных<span
+              class="registration__required-mark"
+              >*</span
+            >
+          </label>
+          <a href="#" class="privacy-policy"
+      >Политика конфиденциальности</a
+    >
+          <button
+            class="registration__button"
+            type="submit"
+            name="button"
+            disabled
+            id="button" onclick="checkAll2()"
+          >Отправить</button>
+          <div class = "errorsInfo"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+

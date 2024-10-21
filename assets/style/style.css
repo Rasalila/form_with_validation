@@ -1,0 +1,255 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 900px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 20px;
+
+  background-color: #1b1224;
+}
+
+.registration__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration__title {
+  margin: auto;
+  margin-bottom: 40px;
+  font-size: 50px;
+  color: rgb(194, 194, 98);
+}
+
+.registation__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.registration__input-title {
+  min-width: 200px;
+}
+
+.registration__required-mark {
+  margin-left: 5px;
+
+  color: yellow;
+}
+
+.registration__list {
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.registation__item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(240, 240, 212, 0.5);
+}
+
+.registation__item-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  flex: none;
+}
+
+.registation__item-icon_hidden {
+  display: none;
+}
+
+.registration__input,
+.registration__select,
+.registration__button,
+.registration__list,
+.registration__error {
+  min-width: 300px;
+  margin-left: auto;
+}
+
+.registration__input:focus,
+.registration__select:focus {
+  outline-color: rgb(194, 194, 98);
+  outline-width: 2px;
+  outline-offset: 0;
+}
+
+.registration__input {
+  padding: 8px 10px;
+
+  color: rgb(194, 194, 98);
+
+  border: 1px solid rgb(244, 244, 238);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.registration__select {
+  padding: 8px 10px;
+
+  color: rgb(255, 255, 255);
+
+  border: 1px solid rgb(244, 244, 238);
+  border-radius: 5px;
+  background-color: rgb(75, 48, 100);
+}
+
+.registation__fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0 0 36px;
+  margin-bottom: 20px;
+
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.171);
+}
+
+.registration__radio-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.registration__radio {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
+.registration__radio + .registration__radio-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid rgb(244, 244, 238);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.registration__radio:checked + .registration__radio-title::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 100%;
+  background-color: rgb(194, 194, 98);
+}
+
+.registration__radio-title,
+.registration__checkbox-title {
+  margin-left: 10px;
+}
+
+.registration__checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 38px;
+}
+
+.registration__checkbox {
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+}
+
+.registration__checkbox + .registration__checkbox-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid rgb(244, 244, 238);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.registration__checkbox:checked + .registration__checkbox-title::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+
+  border-radius: 5px;
+  background-color: rgb(194, 194, 98);
+}
+
+.registration__select-wrapper {
+  position: relative;
+}
+
+.registration__select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 18px;
+  z-index: -1;
+  width: 15px;
+  height: 15px;
+
+  background-image: url(../icons/arrow-down.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.registration__select {
+  appearance: none;
+}
+
+.registration__button {
+  margin-left: auto;
+  padding: 10px 8px;
+
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: rgb(159, 114, 201);
+  transition: background-color 0.2s linear;
+}
+
+.registration__button[disabled]:hover {
+  background-color: rgb(194, 194, 98);
+}
+
+.registration__button:not([disabled]):hover {
+  background-color: rgb(159, 114, 201);
+}
+.errorsInfo {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.privacy-policy {
+  color: rgb(159, 114, 201);
+  font-size: 15px;
+  margin-left: 36px;
+  text-decoration: none;
+}
